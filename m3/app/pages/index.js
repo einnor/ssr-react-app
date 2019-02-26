@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import DigitalClock from '../src/DigitalClock';
+
 class Index extends Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +14,7 @@ class Index extends Component {
 		this.interval = setInterval(() => this.tick(), 1000);
 	}
 
-	componentDidUnmount() {
+	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
 
@@ -22,7 +24,7 @@ class Index extends Component {
 
 	render() {
 		const { time } = this.state;
-		return (<h1>{time}</h1>);
+		return (<DigitalClock time={time} />);
 	}
 }
 
