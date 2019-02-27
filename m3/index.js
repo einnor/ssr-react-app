@@ -10,7 +10,7 @@ class Hello extends React.Component {
 		this.interval = setInterval(() => this.tick(), 1000);
 	}
 
-	componentDidUnmount() {
+	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
 
