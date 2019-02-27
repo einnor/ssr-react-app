@@ -1,80 +1,164 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React, {Component} from 'react';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/site.css';
 
-class Bootstrap extends Component {
-	render() {
-		return (
-			<div>
-				<div className="jumbotron text-center" style={{ marginBottom: 0}}>
-				  <h1>My First Bootstrap 4 Page</h1>
-				  <p>Resize this responsive page to see the effect!</p> 
-				</div>
+class bootstrap extends Component {
+    render() {
+        return (
+            <div>
+                <div className="jumbotron">
+                    <div className="row">
+                        <div className="col-12 col-sm-4 text-center">
+                            <h6 className="text-uppercase">October 13-14&nbsp;&nbsp;2018</h6>
+                            <h6 className="text-uppercase">San Jose, California</h6>
+                        </div>
+                        <div className="col-12 col-sm-8 text-lg-right">
+                            <div><img src='/static/SVCClogo.png' /></div>
+                            <h2>Silicon Valley Code Camp 2018</h2>
+                        </div>
+                    </div>
+                </div>
 
-				<nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-				  <a className="navbar-brand" href="#">Navbar</a>
-				  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				    <span className="navbar-toggler-icon"></span>
-				  </button>
-				  <div className="collapse navbar-collapse" id="collapsibleNavbar">
-				    <ul className="navbar-nav">
-				      <li className="nav-item">
-				        <a className="nav-link" href="#">Link</a>
-				      </li>
-				      <li className="nav-item">
-				        <a className="nav-link" href="#">Link</a>
-				      </li>
-				      <li className="nav-item">
-				        <a className="nav-link" href="#">Link</a>
-				      </li>    
-				    </ul>
-				  </div>  
-				</nav>
+                <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <div className="navbar" >
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Home</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Speakers</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Sessions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
-				<div className="container" style={{ marginTop: 30 }}>
-				  <div className="row">
-				    <div className="col-sm-4">
-				      <h2>About Me</h2>
-				      <h5>Photo of me:</h5>
-				      <div className="fakeimg">Fake Image</div>
-				      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-				      <h3>Some Links</h3>
-				      <p>Lorem ipsum dolor sit ame.</p>
-				      <ul className="nav nav-pills flex-column">
-				        <li className="nav-item">
-				          <a className="nav-link active" href="#">Active</a>
-				        </li>
-				        <li className="nav-item">
-				          <a className="nav-link" href="#">Link</a>
-				        </li>
-				        <li className="nav-item">
-				          <a className="nav-link" href="#">Link</a>
-				        </li>
-				        <li className="nav-item">
-				          <a className="nav-link disabled" href="#">Disabled</a>
-				        </li>
-				      </ul>
-				      <hr className="d-sm-none" />
-				    </div>
-				    <div className="col-sm-8">
-				      <h2>TITLE HEADING</h2>
-				      <h5>Title description, Dec 7, 2017</h5>
-				      <div className="fakeimg">Fake Image</div>
-				      <p>Some text..</p>
-				      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-				      <br />
-				      <h2>TITLE HEADING</h2>
-				      <h5>Title description, Sep 2, 2017</h5>
-				      <div className="fakeimg">Fake Image</div>
-				      <p>Some text..</p>
-				      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-				    </div>
-				  </div>
-				</div>
-			</div>
-		);
-	}
+                <div className="container">
+                    <div className="row">
+                        <div className="col margintopbottom">
+                            <h2>Speakers</h2>
+                        </div>
+                    </div>
+
+                    <div className="row">
+
+                        <div className="card-deck">
+
+
+                            <div className="card col-4 cardmin">
+                                <img className="card-img-top" src='/static/speakers/Speaker-8367.jpg'/>
+                                <div className="card-body">
+
+                                    <a href="#" className="btn btn-lg btn-block btn-outline-primary margintopbottom10">See Profile</a>
+                                    <h4 className="card-title">Gayle Laakmann McDowell</h4>
+                                    <p className="card-text">Founder/CEO of CareerCup, a company that does lots of things around tech interviews, such as consulting and publishing.</p>
+
+                                </div>
+                            </div>
+
+                            <div className="card col-4 cardmin ">
+                                <img className="card-img-top" src='/static/speakers/Speaker-2920.jpg'/>
+                                <div className="card-body">
+
+                                    <a href="#" className="btn btn-lg btn-block btn-outline-primary margintopbottom10">See Profile</a>
+                                    <h4 className="card-title">Ron Lichty</h4>
+                                    <p className="card-text">Interim VP Eng. Transforming chaos to clarity. Author, Managing the Unmanageable (Addison Wesley).</p>
+
+                                </div>
+                            </div>
+
+                            <div className="card col-4 cardmin">
+                                <img className="card-img-top" src='/static/speakers/Speaker-1124.jpg'/>
+                                <div className="card-body">
+
+                                    <a href="#" className="btn btn-lg btn-block btn-outline-primary margintopbottom10">See Profile</a>
+                                    <h4 className="card-title">Douglas Crockford</h4>
+                                    <p className="card-text">Douglas Crockford discovered the JSON Data Interchange Format. He is also the author of _JavaScript: The Good Parts_. He has been called a guru, but he is actually more of a mahatma.</p>
+                                </div>
+                            </div>
+
+                            <div className="card col-4 cardmin">
+                                <img className="card-img-top" src='/static/speakers/Speaker-39062.jpg'/>
+                                <div className="card-body">
+
+                                    <a href="#" className="btn btn-lg btn-block btn-outline-primary margintopbottom10">See Profile</a>
+                                    <h4 className="card-title">Mike North</h4>
+                                    <p className="card-text">Mike trains web development teams all over the world, at companies ranging from tiny stealth-mode startups to Silicon Valley tech giants.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div className="row">
+                        <div className="col margintopbottom">
+                            <hr/>
+                            <h2>Sessions</h2>
+                        </div>
+                    </div>
+
+                    <div className="row">
+
+                        <div className="card-deck">
+
+
+                            <div className="card col-4 cardmin">
+                                <div className="card-body">
+                                    <h4 className="card-title"><a href="#">How JavaScript Works</a></h4>
+                                    <h6 className="card-title">Douglas Crockford</h6>
+                                    <p className="card-text">Douglas Crockford is the author of <b>How JavaScript Works</b>, the shocking best seller that rips the lid off behind the scenes. In this light-hearted romp thru the world's most misunderstood programming language, Crockford reveals what is actually going on, and how we can use this to write better programs. "
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <div className="card col-4 cardmin">
+                                <div className="card-body">
+                                    <h4 className="card-title"><a href="#">Managing in an Agile World</a></h4>
+                                    <h6 className="card-title">Ron Lichty</h6>
+                                    <p className="card-text">Managers have critical roles to play enabling agile adoption and agile success. While “self-organizing” does not mean no managers, the old manager roles and rules no longer apply. This session is about manager roles that make agile teams thrive</p>
+
+
+
+                                </div>
+                            </div>
+
+                            <div className="card col-4 cardmin">
+                                <div className="card-body">
+                                    <h4 className="card-title"><a href="#">Cracking the Coding Interview</a></h4>
+                                    <h6 className="card-title">Gayle Laakmann McDowell</h6>
+                                    <p className="card-text">Programmer & best-selling author of Cracking the Coding Interview presents a technical talk on how coding interviews work and how to do well on them. This will be a deeply technical talk covering data structures and algorithms."</p>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div className="jumbotron text-center">
+                    <h7><b>Silicon Valley Code Camp 2018</b> is Hosted by PayPal in San Jose
+                        at their Town Hall location. 2121 North First Street. <b>October 13-14 2018</b></h7>
+                </div>
+
+
+            </div>
+        );
+    }
 }
 
-export default Bootstrap;
+bootstrap.propTypes = {};
+bootstrap.defaultProps = {};
+
+export default bootstrap;
