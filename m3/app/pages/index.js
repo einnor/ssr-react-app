@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 
 class Index extends Component {
@@ -30,15 +31,20 @@ class Index extends Component {
 	render() {
 		const { speakerData } = this.state;
 		return (
-			<ul>
-				{
-					speakerData.map((speaker) => (
-						<li key={speaker.id}>
-							{speaker.firstName} {speaker.lastName}
-						</li>
-					))
-				}
-			</ul>
+			<div>
+				<Link href='/sessions'>
+					<a>Sessions</a>
+				</Link>
+				<ul>
+					{
+						speakerData.map((speaker) => (
+							<li key={speaker.id}>
+								{speaker.firstName} {speaker.lastName}
+							</li>
+						))
+					}
+				</ul>
+			</div>
 		);
 	}
 }
