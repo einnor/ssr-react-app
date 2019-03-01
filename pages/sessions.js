@@ -2,11 +2,22 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import SessionCard from "../src/SessionCard";
+import getConfig from 'next/config';
+const {serverRuntimeConfig, publicRuntimeConfig} = getConfig();
 
 
 class Sessions extends Component {
+	static getSessionsUrl() {
+        if (process.env.NODE_ENV === "production") {
+            return process.env.RESTURL_SESSIONS_PROD
+                || publicRuntimeConfig.RESTURL_SESSIONS_PROD;
+        } else {
+            return process.env.RESTURL_SESSIONS_DEV;
+        }
+    }
+
 	static async getInitialProps() {
-		var promise = axios.get('http://localhost:4000/sessions')
+		var promise = axios.get(Sessions.getSessionsUrl())
 			.then((response) => ({ hasErrored: false, sessionData: response.data }))
 			.catch((error) => ({ hasErrored: true, message: error.message }));
 		return promise;

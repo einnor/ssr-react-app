@@ -3,12 +3,15 @@ import axios from 'axios';
 import Link from 'next/link';
 
 import SpeakerCard from '../src/SpeakerCard';
+import getConfig from 'next/config';
+const {serverRuntimeConfig, publicRuntimeConfig} = getConfig();
 
 
 class Speakers extends Component {
 	static getSpeakerUrl() {
 		if (process.env.NODE_ENV === 'production') {
-			return process.env.RESTURL_SPEAKERS_PROD;
+			return process.env.RESTURL_SPEAKERS_PROD
+                || publicRuntimeConfig.RESTURL_SPEAKERS_PROD;
 		} else {
 			return process.env.RESTURL_SPEAKERS_DEV;
 		}
