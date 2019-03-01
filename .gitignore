@@ -2,3 +2,4 @@ node_modules/
 .idea
 .IDEA
 .next/
+.DS_Store
