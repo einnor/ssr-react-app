@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 
-import SpeakerCard from './SpeakerCard';
+import SpeakerCard from '../src/SpeakerCard';
 
 
 class Speakers extends Component {
