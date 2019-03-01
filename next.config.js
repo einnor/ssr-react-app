@@ -5,7 +5,6 @@ const Dotenv = require("dotenv-webpack");
 
 module.exports = withCSS(
     {
-    	{
         serverRuntimeConfig: {
             // Will only be available on the server side
         },
