@@ -6,8 +6,16 @@ import SpeakerCard from '../src/SpeakerCard';
 
 
 class Speakers extends Component {
+	static getSpeakerUrl() {
+		if (process.env.NODE_ENV === 'production') {
+			return process.env.RESTURL_SPEAKERS_PROD;
+		} else {
+			return process.env.RESTURL_SPEAKERS_DEV;
+		}
+	}
+
 	static async getInitialProps() {
-		var promise = axios.get('http://localhost:4000/speakers')
+		var promise = axios.get(Speakers.getSpeakerUrl())
 			.then((response) => ({ hasErrored: false, speakerData: response.data }))
 			.catch((error) => ({ hasErrored: true, message: error.message }));
 		return promise;
