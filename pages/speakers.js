@@ -18,10 +18,24 @@ class Speakers extends Component {
 	}
 
 	static async getInitialProps() {
-		var promise = axios.get(Speakers.getSpeakerUrl())
-			.then((response) => ({ hasErrored: false, speakerData: response.data }))
+		const isServer = !!req;
+		if (isServer) {
+			// Runs on node server only
+			var promise = axios.get(Speakers.getSpeakerUrl())
+			.then((response) => ({ isLoading: false, hasErrored: false, speakerData: response.data }))
 			.catch((error) => ({ hasErrored: true, message: error.message }));
 		return promise;
+		} else {
+			// Run in client browser only
+			return {
+				speakerData: [...Array(5)].map((_, i) => ({
+					firstName: '',
+					lastName: '',
+					id: i,
+				}));
+				isLoading: true,
+			};
+		}
 	}
 
 	constructor(props) {
@@ -34,15 +48,30 @@ class Speakers extends Component {
 	}
 
 	componentDidMount() {
-		
-	}
+        axios
+            .get(Speakers.getSpeakersUrl())
+            .then((response) => {
+                this.setState({
+                    hasErrored: false,
+                    isLoading: false,
+                    speakerData: response.data
+                });
+            })
+            .catch((error) => {
+                this.setState({
+                    hasErrored: true,
+                    isLoading: false,
+                    speakerData: []
+                });
+            });
+    }
 
 	componentWillUnmount() {
 		
 	}
 
 	render() {
-		const { speakerData } = this.state;
+		const { speakerData, isLoading } = this.state;
 		return (
 			<div className="container">
 				<div className="row">
@@ -50,7 +79,7 @@ class Speakers extends Component {
 						{
 							speakerData.map((speaker) => (
 								<div className="card col-4 cardmin margintopbottom20" key={speaker.id}>
-									<SpeakerCard speaker={speaker} />
+									<SpeakerCard isLoading={isLoading} speaker={speaker} />
 								</div>
 							))
 						}
