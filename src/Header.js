@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import svccLogo from '../static/SVCClogo.png';
 
 export default class Header extends Component {
 	render() {
@@ -10,7 +11,7 @@ export default class Header extends Component {
                         <h6 className="text-uppercase">San Jose, California</h6>
                     </div>
                     <div className="col-12 col-sm-8 text-lg-right">
-                        <div><img src='/static/SVCClogo.png'/></div>
+                        <div><img src={svccLogo} /></div>
                         <h2>Silicon Valley Code Camp 2018</h2>
                     </div>
                 </div>
