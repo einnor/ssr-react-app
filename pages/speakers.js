@@ -17,7 +17,7 @@ class Speakers extends Component {
 		}
 	}
 
-	static async getInitialProps() {
+	static async getInitialProps(req) {
 		const isServer = !!req;
 		if (isServer) {
 			// Runs on node server only
@@ -32,7 +32,7 @@ class Speakers extends Component {
 					firstName: '',
 					lastName: '',
 					id: i,
-				}));
+				})),
 				isLoading: true,
 			};
 		}
@@ -49,7 +49,7 @@ class Speakers extends Component {
 
 	componentDidMount() {
         axios
-            .get(Speakers.getSpeakersUrl())
+            .get(Speakers.getSpeakerUrl())
             .then((response) => {
                 this.setState({
                     hasErrored: false,
