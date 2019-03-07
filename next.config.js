@@ -2,9 +2,12 @@ const withCSS = require('@zeit/next-css');
 require("dotenv").config();
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
+const withImages = require('next-images');
 
 module.exports = withCSS(
+	withImages(
     {
+    	inlineImageLimit: 16384,
         serverRuntimeConfig: {
             // Will only be available on the server side
         },
@@ -29,5 +32,5 @@ module.exports = withCSS(
             ];
             return config;
         }
-    }
+    })
 );
